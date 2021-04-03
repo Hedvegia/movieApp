@@ -1,0 +1,15 @@
+@import '../index';
+
+.Dashboard {
+  .Movies {
+    flex-grow: 1;
+    background: $color;
+    width: 100%;
+    overflow: scroll;
+
+    .Title {
+      margin: 16px;
+      color: $hoverColor;
+    }
+  }
+}

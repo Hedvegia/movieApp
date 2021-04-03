@@ -1,0 +1,40 @@
+{
+  "defaultSeverity": "error",
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "extends": [
+    "tslint:latest",
+    "tslint-react"
+  ],
+  "rules": {
+    "max-line-length": [
+      true,
+      240
+    ],
+    "no-implicit-dependencies": false,
+    "no-parameter-reassignment": false,
+    "import-name": false,
+    "no-submodule-imports": false,
+    "no-var-requires": false,
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": false,
+    "no-namespace": false,
+    "no-console": false,
+    "interface-name": false,
+    "jsx-no-multiline-js": false,
+    "jsx-wrap-multiline": false,
+    "no-increment-decrement": false,
+    "trailing-comma": false,
+    "align": false,
+    "jsx-no-lambda": false,
+    "jsx-no-bind": true,
+    "indent": [
+      true,
+      "spaces",
+      4
+    ]
+  }
+}

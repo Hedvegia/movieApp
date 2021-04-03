@@ -1,0 +1,30 @@
+@import '../../index';
+
+.Header {
+  width: 100%;
+
+  .HeaderComponent {
+    width: 100%;
+    padding: 16px 24px 16px 24px;
+
+    .Title {
+      color: $color;
+
+      &:hover {
+        color: $hoverColor;
+      }
+    }
+
+    .SearchFieldFocus {
+      border: 1px solid $color;
+      border-radius: 50px;
+      margin: 7px 0 7px 0;
+
+      input {
+        color: $color;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+}

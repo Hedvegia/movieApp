@@ -1,0 +1,61 @@
+@import '../../index';
+
+.MoviesContent {
+  padding: 8px;
+
+  .TypeBox {
+    margin: 8px;
+
+    .Title {
+      color: $hoverColor;
+    }
+  }
+
+  .MovieCard {
+    margin: 8px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.87);
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(white, 0.65);
+      margin: 0;
+    }
+
+    .CardContent {
+      overflow: hidden;
+
+      .Title {
+        color: $color;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .DetailsBox {
+        margin: 8px 0 8px 0;
+
+        .Icon {
+          font-size: 16px;
+        }
+
+        p {
+          margin: 0 0 0 4px;
+        }
+      }
+
+      .GenreBox {
+        padding: 4px;
+        border: 1px solid $color;
+        border-radius: 5px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+
+        p {
+          margin: 0;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

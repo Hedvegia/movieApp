@@ -1,0 +1,105 @@
+@import '../../index';
+
+.ModalBox {
+  border: 1px solid $color;
+  border-radius: 5px;
+  background: $color;
+  margin: auto;
+  box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.83);
+  overflow: scroll;
+
+  .ContentContainer {
+    padding: 8px;
+    outline: none;
+
+    .EmptyImage {
+      border: 1px solid $hoverColor;
+      border-radius: 5px;
+    }
+
+    .Content {
+      flex-grow: 1;
+      overflow: scroll;
+
+      .Title {
+        color: $hoverColor;
+      }
+
+      .DetailsBox {
+        margin: 8px 0 8px 0;
+
+        .Title {
+          margin: 0 0 0 8px;
+        }
+
+        .Icon {
+          font-size: 20px;
+        }
+      }
+
+      .GenreBox {
+        padding: 4px;
+        border: 1px solid $hoverColor;
+        border-radius: 5px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+
+        p {
+          margin: 0;
+          font-size: 12px;
+        }
+      }
+
+      .Description {
+        margin: 8px 0 0 0;
+        color: $hoverColor;
+        text-align: justify;
+        font-size: 14px;
+      }
+
+    }
+
+    .ShowMore {
+      color: #f44336;
+      text-align: justify;
+      font-size: 12px;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .CastContainer {
+      margin-top: 8px;
+
+      .Class {
+        margin: 0 8px 0 0;
+
+        p {
+          color: $hoverColor;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .Wikipedia {
+      padding: 8px 0 8px 0;
+
+      .WikipediaTitle {
+        margin-bottom: 8px;
+      }
+
+      .Title {
+        color: $hoverColor;
+        font-size: 14px;
+        text-align: justify;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .Link {
+        font-size: 14px;
+      }
+    }
+  }
+}
