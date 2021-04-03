@@ -8,7 +8,7 @@ import { MovieDetails } from '../movie-details/movie-details';
 import './movies.scss';
 
 export class Movies extends React.Component<any, any> {
-    state = {
+    state: any = {
         selectedMovie: false
     };
 
@@ -26,7 +26,7 @@ export class Movies extends React.Component<any, any> {
         </Box>;
     };
 
-    renderImage = (movie) => {
+    renderImage = (movie): React.ReactNode => {
         return <Box key={movie.id} className="Card" display="flex">
             <Card className="MovieCard" onClick={() => this.setState({ selectedMovie: movie.id })}>
                 {get(movie.img, 'url') && <CardMedia
@@ -65,7 +65,7 @@ export class Movies extends React.Component<any, any> {
         </Box>;
     };
 
-    renderGenre = (genre) => {
+    renderGenre = (genre): React.ReactNode => {
         return <Box className="GenreBox" key={'_' + Math.random().toString(36).substr(2, 9)}>
             <Typography paragraph={true} className="Title">{genre.name}</Typography>
         </Box>;

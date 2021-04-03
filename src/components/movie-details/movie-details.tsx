@@ -19,7 +19,7 @@ const client = new ApolloClient({
 });
 
 export class MovieDetails extends React.Component<any, any> {
-    state = {
+    state: any = {
         loading: false,
         movie: null,
         seeMore: false,
@@ -28,13 +28,13 @@ export class MovieDetails extends React.Component<any, any> {
         wikipedia: false
     };
 
-    componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
+    componentDidUpdate = (prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any): void => {
         if (this.props.movie !== prevProps.movie && !!this.props.movie) {
             this.fetch();
         }
     }
 
-    fetch = () => {
+    fetch = (): void => {
         this.setState({ loading: true });
 
         client.query({
@@ -48,7 +48,7 @@ export class MovieDetails extends React.Component<any, any> {
             .catch((err: any) => this.setState({ error: err, loading: false }))
     };
 
-    fetchWikipedia = () => {
+    fetchWikipedia = (): void => {
         axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=1&prop=extracts|pageimages&pithumbsize=400&origin=*&exintro&explaintext&exsentences=3&exlimit=max&gsrsearch=${get(this.state, 'movie.name')}`)
             .then((resp) => {
                 const wikiResp = get(resp.data.query, 'pages');
@@ -59,7 +59,7 @@ export class MovieDetails extends React.Component<any, any> {
             .catch((err) => this.setState({ wikipedia: false }));
     };
 
-    render = () => {
+    render = (): React.ReactNode => {
         return <Modal
             open={this.props.movie ? true : false}
             onClose={() => this.handleClose()}
@@ -72,7 +72,7 @@ export class MovieDetails extends React.Component<any, any> {
         </Modal>;
     };
 
-    renderContent = () => {
+    renderContent = (): React.ReactNode => {
         const movie: any = this.state.movie;
 
         return <Box className="ContentContainer">
@@ -137,13 +137,13 @@ export class MovieDetails extends React.Component<any, any> {
         </Box>;
     };
 
-    renderGenre = (genre) => {
+    renderGenre = (genre): React.ReactNode => {
         return <Box className="GenreBox" key={'_' + Math.random().toString(36).substr(2, 9)}>
             <Typography paragraph={true} className="Title">{genre.name}</Typography>
         </Box>;
     };
 
-    renderDetails = (details) => {
+    renderDetails = (details): string => {
         if (details.length > 300 && !this.state.seeMore) {
             return `${details.substr(0, 300)}...`;
         }
@@ -151,13 +151,13 @@ export class MovieDetails extends React.Component<any, any> {
         return details;
     };
 
-    renderCast = (member) => {
+    renderCast = (member): React.ReactNode => {
         return <Box display="flex" key={'_' + Math.random().toString(36).substr(2, 9)} className="Class">
             <Typography paragraph={true}>{member.person.name} - {member.role.character},</Typography>
         </Box>;
     };
 
-    handleClose = () => {
+    handleClose = (): void => {
         this.setState({ movie: null });
         if (this.props.close) {
             this.props.close();

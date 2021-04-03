@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
         this.fetch();
     };
 
-    fetch = (): any => {
+    fetch = (): void => {
         this.setState({ loading: true });
 
         client.query({
@@ -37,7 +37,7 @@ export class Dashboard extends React.Component {
             .finally(() => this.setState({ loading: false }));
     };
 
-    search = (text: string = ''): any => {
+    search = (text: string = ''): void => {
         this.setState({ loading: true });
 
         client.query({
@@ -49,7 +49,7 @@ export class Dashboard extends React.Component {
             .finally(() => this.setState({ loading: false }));
     };
 
-    render = () => {
+    render = (): React.ReactNode => {
         return <div className="Dashboard">
             <Header fetch={(text: any) => this.search(text)} fetchPopular={() => this.fetch()}/>
             <Box className="Movies">
@@ -60,7 +60,7 @@ export class Dashboard extends React.Component {
         </div>;
     };
 
-    renderEmpty() {
+    renderEmpty(): React.ReactNode {
         return <Typography paragraph={true} className="Title">There is no any movie for {this.state.type}, please type something else.</Typography>;
     }
 }
